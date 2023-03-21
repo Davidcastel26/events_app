@@ -1,4 +1,4 @@
-const Page = () => {
+const EventCityPage = () => {
     return(
         <div>
           <h1>Events Page</h1>
@@ -24,4 +24,4 @@ const Page = () => {
     )
 }
 
-export default Page;
+export default EventCityPage;

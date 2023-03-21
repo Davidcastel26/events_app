@@ -1,5 +1,5 @@
 
-const indexEvent = ({title, }) => {
+const EvntsCatPage = ({title, }) => {
   return (
     <div>
         <h2>{title}</h2>
@@ -12,7 +12,7 @@ const indexEvent = ({title, }) => {
   )
 }
 
-export default indexEvent
+export default EvntsCatPage
 
 export function getServerSideProps(){
   
