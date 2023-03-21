@@ -32,6 +32,12 @@ export async function getStaticPath(){
 }
 
 export async function getStaticProps(context){
-  console.log(context);
-  return{props:{}}
+  // console.log(context);
+  const id = context?.params.cat;
+  const { allEvents } = await import('/data/data.json')
+  
+  const data = allEvents.filter(ev => ev.city == id)
+  console.log(data);
+  
+  return{props:{data}}
 }
