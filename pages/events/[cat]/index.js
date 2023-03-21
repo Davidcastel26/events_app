@@ -18,9 +18,7 @@ export function getServerSideProps(){
   
   return{
     props:{
-      title: "Hello everyone",
 
     }
   }
-
 }
