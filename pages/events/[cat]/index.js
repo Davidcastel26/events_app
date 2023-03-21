@@ -26,6 +26,12 @@ export async function getStaticPath(){
   })
   console.log(allPaths);
   return{
-    path: allPaths, 
+    paths: allPaths, 
+    fallback: false,
   }
+}
+
+export async function getStaticProps(context){
+  console.log(context);
+  return{props:{}}
 }
