@@ -24,13 +24,29 @@ export default function Home() {
           <a href="/about"> About Us</a>
         </nav>
       </header>
+
       <main className={styles.main}>
+        <a href=''>
+          <img/>
+          <h2>Events in London</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta nemo quisquam molestiae odit nam praesentium nesciunt nulla, deserunt voluptatum commodi aspernatur omnis ipsum consequuntur fugit quo numquam, assumenda quam pariatur.</p>
+        </a>
+        <a href=''>
+          <img/>
+          <h2>Events in San Francisco</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta nemo quisquam molestiae odit nam praesentium nesciunt nulla, deserunt voluptatum commodi aspernatur omnis ipsum consequuntur fugit quo numquam, assumenda quam pariatur.</p>
+        </a>
+        <a href=''>
+          <img/>
+          <h2>Events in Spain</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta nemo quisquam molestiae odit nam praesentium nesciunt nulla, deserunt voluptatum commodi aspernatur omnis ipsum consequuntur fugit quo numquam, assumenda quam pariatur.</p>
+        </a>
 
       </main>
 
-      {/* <Footer className={styles.footer}>
-
-      </Footer> */}
+      <footer className={styles.footer}>
+        <p> © 2023 Time to Code - A project </p>
+      </footer>
     </div>
   )
 }
