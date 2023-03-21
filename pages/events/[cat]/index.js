@@ -1,20 +1,26 @@
+import Image from 'next/image'
 
-const EvntsCatPage = ({title, }) => {
+const EvntsCatPage = ({data}) => {
   return (
     <div>
-        <h2>{title}</h2>
-
-        <a href="/event/event1">Event 1</a>
-        <a href="/event/event2">Event 2</a>
-        <a href="/event/event3">Event 3</a>
-
+        <div>
+          {
+            data.map(ev => (
+              <a key={ev.id} href={`/events/${ev.city}/${ev.id}`}>
+                <Image width={300} height={300} alt={ev.title} src={ev.image}/>
+                <h2>{ev.title}</h2>
+                <p>{ev.description}</p>
+              </a>
+            ))
+          }
+        </div>
     </div>
   )
 }
 
 export default EvntsCatPage
 
-export async function getStaticPath(){
+export async function getStaticPaths(){
   
   const { events_categories } = await import('/data/data.json')
   const allPaths = events_categories.map(ev => {
