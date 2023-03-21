@@ -1,8 +1,17 @@
-const EventCityPage = () => {
+
+const EventCityPage = ({ data }) => {
     return(
         <div>
           <h1>Events Page</h1>
 
+          <div>
+            {
+              data.map(ev => (
+                <a href={`/events/${ev.id}`}>
+                </a>
+              ))
+            }
+          </div>
         <a href=''>
             <img/>
             <h2>Events in London</h2>
@@ -29,6 +38,8 @@ export default EventCityPage;
 export async function getStaticProps(){
   const {events_categories} = await import('/data/data.json')
   return {
-    data: events_categories,
+    props:{
+      data: events_categories,
+    }
   }
 }
