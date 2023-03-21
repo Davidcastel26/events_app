@@ -26,8 +26,6 @@ export async function getStaticPath(){
   })
   console.log(allPaths);
   return{
-    path:[{
-      params:{}
-    }]
+    path: allPaths, 
   }
 }
