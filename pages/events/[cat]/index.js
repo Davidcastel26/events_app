@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const EvntsCatPage = ({data}) => {
+const EvntsCatPage = ({data, pageName}) => {
   return (
     <div>
+      <h1>Events in {pageName}</h1>
         <div>
           {
             data.map(ev => (
@@ -44,7 +45,7 @@ export async function getStaticProps(context){
   const { allEvents } = await import('/data/data.json')
   
   const data = allEvents.filter(ev => ev.city == id)
-  console.log(data);
+  // console.log(data);
   
-  return{props:{data}}
+  return{props:{data, pageName: id}}
 }
