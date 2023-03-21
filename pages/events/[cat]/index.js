@@ -1,5 +1,5 @@
 
-const index = () => {
+const index = ({title, }) => {
   return (
     <div>
         <h2>Events in ...</h2>
@@ -13,3 +13,14 @@ const index = () => {
 }
 
 export default index
+
+export function getServerSideProps(){
+  
+  return{
+    props:{
+      title: "Hello everyone",
+
+    }
+  }
+
+}
