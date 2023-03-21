@@ -1,8 +1,8 @@
 
-const index = ({title, }) => {
+const indexEvent = ({title, }) => {
   return (
     <div>
-        <h2>Events in ...</h2>
+        <h2>{title}</h2>
 
         <a href="/event/event1">Event 1</a>
         <a href="/event/event2">Event 2</a>
@@ -12,7 +12,7 @@ const index = ({title, }) => {
   )
 }
 
-export default index
+export default indexEvent
 
 export function getServerSideProps(){
   
