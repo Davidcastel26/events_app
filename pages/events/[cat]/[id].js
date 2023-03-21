@@ -1,9 +1,11 @@
+import Image from 'next/image';
 
-const Page = () => {
+const Page = ({data}) => {
   return (
     <div>
-        <h1>Our Single Event</h1>
-
+        <Image src={ data.image} width={900} height={500} alt={data.title} />
+        <h1>{data.title}</h1>
+        <p>{data.description}</p>
     </div>
   )
 }
@@ -13,7 +15,7 @@ export default Page;
 export async function getStaticPaths(){
 
   const data = await import('/data/data.json');
-  const allEvents = data;
+  const {allEvents} = data;
 
   const allPaths = allEvents.map( path => {
     return{
@@ -33,4 +35,12 @@ export async function getStaticPaths(){
 
 export async function getStaticProps(context){
 
+  const id = context.params.id;
+  const {allEvents} = await import('/data/data.json')
+
+  const eventData = allEvents.find(ev=> (id === ev.id ))
+
+  return{
+    props:{data: eventData}
+  }
 }
