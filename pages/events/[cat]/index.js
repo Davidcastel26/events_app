@@ -14,11 +14,20 @@ const EvntsCatPage = ({title, }) => {
 
 export default EvntsCatPage
 
-export function getServerSideProps(){
+export async function getStaticPath(){
   
-  return{
-    props:{
-
+  const { events_categories } = await import('/data/data.json')
+  const allPaths = events_categories.map(ev => {
+    return{
+      params:{
+        cat: ev.id.toString()
+      }
     }
+  })
+  console.log(allPaths);
+  return{
+    path:[{
+      params:{}
+    }]
   }
 }
