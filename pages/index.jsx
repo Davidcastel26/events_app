@@ -40,7 +40,7 @@ export default function Home({data}) {
       </main>
 
       <footer className={styles.footer}>
-        <p> © 2023 Time to Code - A project </p>
+        <p> © 2023 Time to Code - A project  😍</p>
       </footer>
     </div>
   )
