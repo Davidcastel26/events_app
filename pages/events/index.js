@@ -25,3 +25,10 @@ const EventCityPage = () => {
 }
 
 export default EventCityPage;
+
+export async function getStaticProps(){
+  const {events_categories} = await import('/data/data.json')
+  return {
+    data: events_categories,
+  }
+}
