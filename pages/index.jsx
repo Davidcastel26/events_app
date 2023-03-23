@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
+import { HomePage } from '@/src/components/home/HomePage'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,18 +27,7 @@ export default function Home({data}) {
         </nav>
       </header>
 
-      <main className={styles.main}>
-
-        {
-          data.map((ev) => (
-            <Link key={ev.id} href={`/events/${ev.id}`}>
-              <Image width={200} height={200} src={ev.image} alt={ev.title}/>
-              <h2>{ev.title}</h2>
-              <p>{ev.description}</p>
-            </Link>
-          ))
-        }
-      </main>
+      <HomePage />
 
       <footer className={styles.footer}>
         <p> © 2023 Time to Code - A project  😍</p>
