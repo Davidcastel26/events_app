@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
 import { HomePage } from '@/src/components/home/HomePage'
 import { Header } from '@/src/components/header/Header'
+import { Footer } from '@/src/components/footer/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,10 +21,7 @@ export default function Home({data}) {
 
       <Header />
       <HomePage data={data} />
-
-      <footer className={styles.footer}>
-        <p> © 2023 Time to Code - A project  😍</p>
-      </footer>
+      <Footer />
     </div>
   )
 }
