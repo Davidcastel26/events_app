@@ -5,16 +5,26 @@ import React from 'react'
 export const Header = () => {
   return (
     <header>
+      <div>
         <div className='topNav'>
         <Image alt='logo' src={'/images/logo.png'} width={50} height={50}/>
         <nav>
+          <ul>
+            <li>
+              <Link href="/"> Home</Link>
+            </li>
+            <li>
+              <Link href="/events"> Events</Link>
+            </li>
+            <li>
+              <Link href="/about"> About Us</Link>
+            </li>
+          </ul>
           <img src="" alt="" />
-          <Link href="/"> Home</Link>
-          <Link href="/events"> Events</Link>
-          <Link href="/about"> About Us</Link>
         </nav>
         </div>
         <h1>Sen de perscir lsf</h1>
-      </header>
+      </div>
+    </header>
   )
 }
