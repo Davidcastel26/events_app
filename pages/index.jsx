@@ -27,7 +27,7 @@ export default function Home({data}) {
         </nav>
       </header>
 
-      <HomePage />
+      <HomePage data={data} />
 
       <footer className={styles.footer}>
         <p> © 2023 Time to Code - A project  😍</p>
