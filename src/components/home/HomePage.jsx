@@ -1,10 +1,9 @@
-import styles from '@/styles/Home.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export const HomePage = ({data}) => {
   return (
-    <main className={styles.main}>
+    <main >
 
         {
           data.map((ev) => (
