@@ -1,22 +1,8 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import AllEvntsPage from './event1';
 
 const EventCityPage = ({ data }) => {
     return(
-        <div>
-          <h1>Events Page</h1>
-
-          <div>
-            {
-              data?.map(ev => (
-                <Link key={ev.id} href={`/events/${ev.id}`} passHref>
-                  <Image alt={ev.title} width={300} height={300} src={ev.image} />
-                  <h2>{ev.title}</h2>
-                </Link>
-              ))
-            }
-          </div>
-        </div>
+        <AllEvntsPage data={data}/>
     )
 }
 

@@ -1,7 +1,19 @@
-const Page = () => {
+import Image from "next/image";
+import Link from "next/link";
+
+const AllEvntsPage = ({data}) => {
     return(
-        <h1>Hello about us Page</h1>
+        <div className='events_page'>
+            {
+              data?.map(ev => (
+                <Link className="card" key={ev.id} href={`/events/${ev.id}`} passHref>
+                  <Image alt={ev.title} width={300} height={300} src={ev.image} />
+                  <h2>{ev.title}</h2>
+                </Link>
+              ))
+            }
+        </div>
     )
 }
 
-export default Page;
+export default AllEvntsPage;
