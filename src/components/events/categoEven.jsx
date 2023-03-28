@@ -3,12 +3,12 @@ import Link from 'next/link'
 
 export const CategoEven = ({pageName, data}) => {
   return (
-    <div>
+    <div className='cat_events'>
     <h1>Events in {pageName}</h1>
-      <div>
+      <div className='content_cat'>
         {
           data.map(ev => (
-            <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`}>
+            <Link className='card_cat' key={ev.id} href={`/events/${ev.city}/${ev.id}`}>
               <Image width={300} height={300} alt={ev.title} src={ev.image}/>
               <h2>{ev.title}</h2>
               <p>{ev.description}</p>
