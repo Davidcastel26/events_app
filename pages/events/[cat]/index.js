@@ -1,24 +1,6 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import { CategoEven } from '@/src/components/events/categoEven'
 
-const EvntsCatPage = ({data, pageName}) => {
-  return (
-    <div>
-      <h1>Events in {pageName}</h1>
-        <div>
-          {
-            data.map(ev => (
-              <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`}>
-                <Image width={300} height={300} alt={ev.title} src={ev.image}/>
-                <h2>{ev.title}</h2>
-                <p>{ev.description}</p>
-              </Link>
-            ))
-          }
-        </div>
-    </div>
-  )
-}
+const EvntsCatPage = ({data, pageName}) => <CategoEven data={data} pageName={pageName} />
 
 export default EvntsCatPage
 
