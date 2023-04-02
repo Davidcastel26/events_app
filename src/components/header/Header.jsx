@@ -8,6 +8,7 @@ export const Header = () => {
       <div>
         <div className='topNav'>
         <Image alt='logo' src={'/images/logo.png'} width={50} height={50}/>
+        <h1>Sen de perscir lsf</h1>
         <nav>
           <ul>
             <li>
@@ -23,7 +24,6 @@ export const Header = () => {
           <img src="" alt="" />
         </nav>
         </div>
-        <h1>Sen de perscir lsf</h1>
       </div>
     </header>
   )
