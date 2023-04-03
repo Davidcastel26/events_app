@@ -1,9 +1,35 @@
 import Image from "next/image"
+import { useRouter } from "next/router";
+import { useRef, useState } from "react";
 
 export const SingleEvents = ({data}) => {
   
-  const onSubmitt = () => {
-    console.log('holi');
+  // HOOKS ----------------------
+  const inputEmail = useRef()
+  // console.log(inputEmail);
+  const router = useRouter()
+  console.log(router);
+
+
+  // HANDELERS --------------------
+  const onSubmitt = async(e) => {
+    
+    e.preventDefault()
+    const emailValue = inputEmail.current.value;
+    const eventId = router?.query.id;
+
+    try{
+      const response = await fetch('/api/emailRegistration',{
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json'
+        }
+      })
+
+    }catch(e){
+      console.log(e);
+    }
+
   }
   
   return (
@@ -14,6 +40,7 @@ export const SingleEvents = ({data}) => {
         <form onSubmit={onSubmitt} className="email_registration">
           <label> Enroll for this event!</label>
           <input  
+            ref={inputEmail}
             id="submit-id-email"
             placeholder="Please insert your email" 
             type="email" 
