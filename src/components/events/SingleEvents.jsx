@@ -8,7 +8,7 @@ export const SingleEvents = ({data}) => {
   const inputEmail = useRef()
   // console.log(inputEmail);
   const router = useRouter()
-  console.log(router);
+  // console.log(router);
 
 
   // HANDELERS --------------------
@@ -23,8 +23,14 @@ export const SingleEvents = ({data}) => {
         method:'POST',
         headers:{
           'Content-Type':'application/json'
-        }
+        },
+        body: JSON.stringify({ email: emailValue, eventId})
       })
+
+      if(!response.ok) throw new Error(`Error: ${response.status}`)
+      const data = await response.json()
+      console.log(data)
+
 
     }catch(e){
       console.log(e);
@@ -45,8 +51,8 @@ export const SingleEvents = ({data}) => {
             placeholder="Please insert your email" 
             type="email" 
           />
-          <button 
-            type="button"
+          <button
+            type="submit"
             className="submit-id"
           >
             submit
