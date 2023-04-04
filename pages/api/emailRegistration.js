@@ -32,6 +32,10 @@ export default function handler (req, res){
         //we add our code here
         const {email, eventId} = req.body;
 
+        if( !email | !email.includes('@')){
+            res.status(422).json({message:'invalid email address'})
+        }
+
         const newAllEvents = allEvents.map( e => {
             if(e.id == eventId){
                 if(e.emails_registered.includes(email)){
@@ -50,7 +54,7 @@ export default function handler (req, res){
 
         res
             .status(200)
-            .json({message:`You has been enroll successfully with ${email} ${eventId}`})
+            .json({message:`You has been enroll successfully with ${email} for the event id: ${eventId}`})
     }
 
 }
