@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 export const SingleEvents = ({data}) => {
   
   // HOOKS ----------------------
+  const [message, setMessage] = useState('')
   const inputEmail = useRef()
   // console.log(inputEmail);
   const router = useRouter()
@@ -17,6 +18,12 @@ export const SingleEvents = ({data}) => {
     e.preventDefault()
     const emailValue = inputEmail.current.value;
     const eventId = router?.query.id;
+
+    const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_'{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if(!emailValue.match(validRegex)){
+      setMessage("please introduce a correct email")
+    }
 
     try{
       const response = await fetch('/api/emailRegistration',{
@@ -58,6 +65,7 @@ export const SingleEvents = ({data}) => {
             submit
           </button>
         </form>
+        <p>{message}</p>
     </div>
   )
 }
